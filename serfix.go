@@ -14,7 +14,7 @@ import (
 const (
 	helpFlagUsage  = "Help and usage instructions"
 	forceFlagUsage = "Force overwrite of destination file if it exists"
-	readBuffer     = 2 * 1024 * 1024
+	readBuffer     = 2 * 2 * 2 * 2 * 1024 * 1024
 )
 
 var helpPtr = flag.Bool("help", false, helpFlagUsage)
@@ -133,7 +133,7 @@ func main() {
 			line, isPrefix, err = r.ReadLine()
 		}
 		if isPrefix {
-			fmt.Println(errors.New("buffer size too small"))
+			fmt.Println(errors.New("serfix: buffer size too small"))
 			return
 		}
 		if err != io.EOF {
